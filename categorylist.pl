@@ -30,7 +30,7 @@ sub screen {
     $result .= ']}';
 
     if(param("callback")){
-	
+	#IN PROGRESS
     }else{
 	print header("application/json");
 	print $result;

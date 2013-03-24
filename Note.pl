@@ -21,7 +21,6 @@ $dbh->disconnect();
 sub screen {
     my ($result, $keyword);
     if(!defined $params->param('POSTDATA')){
-	#    if(!param("action")){
 	my $current_page = param("page") || 1;
 	my $offset_page = param("start") || 0;
 	my $limit_per_page = param("limit") ||  25;
@@ -48,12 +47,12 @@ sub screen {
 	    $dbh->do("UPDATE notes SET content=?, categoryid=? WHERE id=?",{},$aux->{content}, $aux->{categoryid}, $aux->{id});
 	    $result = '{"success":true, "message":"Updated"}';
 	}elsif($ENV{QUERY_STRING} =~ /destroy/){
-	    
+	    #IN PROGRESS
 	}
     }
 
     if(param("callback")){
-	
+	#IN PROGRESS
     }else{
 	return $result;
     }
